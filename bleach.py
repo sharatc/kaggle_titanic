@@ -1,3 +1,5 @@
+import numpy as np
+
 PCLASS = 0
 NAME = 1
 SEX = 2
@@ -9,23 +11,36 @@ FARE = 7
 CABIN = 8
 EMBARKED = 9
 
+CLEAN_PCLASS = 0
+CLEAN_NAME = 1
+CLEAN_SEX = 2
+CLEAN_AGE = 3
+CLEAN_SIBSP = 4
+CLEAN_PARCH = 5
+CLEAN_FARE = 6
+CLEAN_CABIN = 7
+CLEAN_EMBARKED = 8
+
 def clean_features(X):
     """
     Cleans an entire feature vector
     """
     X_clean = []
     for row in X:
-        X_clean.append(row[PCLASS])
-        X_clean.append(clean_title(row[NAME]))
-        X_clean.append(clean_sex(row[SEX]))
-        X_clean.append(clean_age(row[AGE]))
-        X_clean.append(row[SIBSP])
-        X_clean.append(row[PARCH])
-        X_clean.append(row[FARE])
-        # note that the ticket column was removed
-        X_clean.append(clean_cabin(row[CABIN]))
-        X_clean.append(row[EMBARKED])
-    return X_clean
+        row_clean = [
+            row[PCLASS],
+            clean_title(row[NAME]),
+            clean_sex(row[SEX]),
+            clean_age(row[AGE]),
+            row[SIBSP],
+            row[PARCH],
+            row[FARE],
+            # note that the ticket column was removed
+            clean_cabin(row[CABIN]),
+            row[EMBARKED]
+        ]
+        X_clean.append(row_clean)
+    return np.array(X_clean)
 
 def clean_sex(sex):
     return 0 if sex is 'male' else 1
