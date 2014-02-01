@@ -1,8 +1,7 @@
+# IDE artifacts
 .idea
-__pycache__
-
-# data files
-data/*.csv
+.eclipse
 
 # cached files
-.pyc
+__pycache__
+*.pyc
