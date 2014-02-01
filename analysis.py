@@ -14,7 +14,7 @@ def analyze_fare(X, y):
     plt.show()
 
 def main():
-    X_train, y_train = utils.read_csv('data/train.csv')
+    X_train, y_train = utils.read_train_csv('data/train.csv')
     X_train = bleach.clean_features(X_train)
 
     analyze_fare(X_train, y_train)

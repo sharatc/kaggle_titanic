@@ -1,7 +1,7 @@
 import numpy as np
 import csv
 
-def read_csv(filename):
+def read_train_csv(filename):
     """
     Reads a CSV file by filename and returns the numpy
     array of the features and targets.
