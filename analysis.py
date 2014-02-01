@@ -1,16 +1,15 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-import csv
-
 import utils
 import bleach
 
-def analyze_fare(X, y):
-    hist = np.histogram(X[:, bleach.CLEAN_FARE].astype(np.float), bins=range(0, 100, 10))
-
+def analyze_fare(X):
     plt.figure(1)
-    plt.plot(hist[1][:-1], hist[0])
+    plt.title('Fare Histogram')
+    plt.xlabel('Bins')
+    plt.ylabel('Fare')
+    plt.hist(X[:, bleach.CLEAN_FARE].astype(np.float), bins=range(0, 100, 10))
     plt.show()
 
 def main():
