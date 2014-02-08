@@ -69,7 +69,7 @@ def clean_title(name):
     return title
 
 def clean_cabin(cabin):
-    if cabin == 'B' or 'D' or 'E': cabin = 1.0 #80% survival rate Divya was here again
+    if cabin == 'B' or 'D' or 'E': cabin = 1.0 #80% survival rate Divya was here again sharat was here
     elif cabin == 'C' or 'F': cabin = 2 #70% survival rate
     elif cabin == '': cabin = 0 #empty cabin
     else: cabin = 3 #50~65% survival rate
