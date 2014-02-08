@@ -16,7 +16,7 @@ def main():
     X_train, y_train = utils.read_train_csv('data/train.csv')
     X_train = bleach.clean_features(X_train)
 
-    analyze_fare(X_train, y_train)
+    analyze_fare(X_train) #Remove extraneous y_train argument
 
 if __name__ == '__main__':
     main()
